@@ -1,0 +1,13 @@
+import { ArrayValue, BooleanValue, NumberValue, RecordValue, StringValue } from '@coveo/bueno';
+export declare const facetId: StringValue<string>;
+export declare const field: StringValue<string>;
+export declare const basePath: ArrayValue<import("@coveo/bueno").PrimitivesValues>;
+export declare const delimitingCharacter: StringValue<string>;
+export declare const filterByBasePath: BooleanValue;
+export declare const filterFacetCount: BooleanValue;
+export declare const injectionDepth: NumberValue;
+export declare const numberOfValues: NumberValue;
+export declare const generateAutomaticRanges: never;
+export declare const captions: RecordValue;
+export declare const query: StringValue<string>;
+export declare const facetSearch: RecordValue;

@@ -1,0 +1,10 @@
+import { QuerySuggestSuccessResponse } from './query-suggest/query-suggest-response';
+import { FacetSearchResponse } from './facet-search/facet-search-response';
+import { SearchResponseSuccess } from './search/search-response';
+import { PlatformResponse } from '../platform-client';
+export declare type PostprocessSearchResponseMiddleware = (response: PlatformResponse<SearchResponseSuccess>) => PlatformResponse<SearchResponseSuccess> | Promise<PlatformResponse<SearchResponseSuccess>>;
+export declare type PostprocessFacetSearchResponseMiddleware = (response: PlatformResponse<FacetSearchResponse>) => PlatformResponse<FacetSearchResponse> | Promise<PlatformResponse<FacetSearchResponse>>;
+export declare type PostprocessQuerySuggestResponseMiddleware = (response: PlatformResponse<QuerySuggestSuccessResponse>) => PlatformResponse<QuerySuggestSuccessResponse> | Promise<PlatformResponse<QuerySuggestSuccessResponse>>;
+export declare const NoopPostprocessSearchResponseMiddleware: PostprocessSearchResponseMiddleware;
+export declare const NoopPostprocessFacetSearchResponseMiddleware: PostprocessFacetSearchResponseMiddleware;
+export declare const NoopPostprocessQuerySuggestResponseMiddleware: PostprocessQuerySuggestResponseMiddleware;
