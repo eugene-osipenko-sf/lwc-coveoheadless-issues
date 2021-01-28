@@ -7,6 +7,7 @@ export declare type StateNeededByGetRecommendations = ConfigurationSection & Rec
 export interface GetRecommendationsThunkReturn {
     recommendations: Result[];
     analyticsAction: SearchAction;
+    searchUid: string;
     duration: number;
 }
 /**

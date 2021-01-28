@@ -64,6 +64,7 @@ export declare class SearchAPIClient {
         };
         success?: undefined;
     }>;
+    private getAbortControllerInstanceIfAvailable;
 }
 export declare const isSuccessResponse: <T>(r: SearchAPIClientResponse<T>) => r is {
     success: T;

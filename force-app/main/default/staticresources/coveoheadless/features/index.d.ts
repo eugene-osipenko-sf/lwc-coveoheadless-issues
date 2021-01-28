@@ -34,6 +34,45 @@ export declare namespace CategoryFacetSetActions {
         criterion: "alphanumeric" | "occurrences";
     }, "categoryFacet/updateSortCriterion", never, never>;
 }
+export declare namespace FacetActions {
+    const registerFacet: import("@reduxjs/toolkit").ActionCreatorWithPreparedPayload<[payload: import("./facets/facet-set/interfaces/options").FacetRegistrationOptions], import("./facets/facet-set/interfaces/options").FacetRegistrationOptions, "facet/register", never, never>;
+    const toggleSelectFacetValue: import("@reduxjs/toolkit").ActionCreatorWithPreparedPayload<[payload: {
+        facetId: string;
+        selection: import("..").FacetValue;
+    }], {
+        facetId: string;
+        selection: import("..").FacetValue;
+    }, "facet/toggleSelectValue", never, never>;
+    const updateFacetIsFieldExpanded: import("@reduxjs/toolkit").ActionCreatorWithPreparedPayload<[payload: {
+        facetId: string;
+        isFieldExpanded: boolean;
+    }], {
+        facetId: string;
+        isFieldExpanded: boolean;
+    }, "facet/updateIsFieldExpanded", never, never>;
+    const updateFacetNumberOfValues: import("@reduxjs/toolkit").ActionCreatorWithPreparedPayload<[payload: {
+        facetId: string;
+        numberOfValues: number;
+    }], {
+        facetId: string;
+        numberOfValues: number;
+    }, "facet/updateNumberOfValues", never, never>;
+    const updateFacetSortCriterion: import("@reduxjs/toolkit").ActionCreatorWithPreparedPayload<[payload: {
+        facetId: string;
+        criterion: "score" | "alphanumeric" | "occurrences" | "automatic";
+    }], {
+        facetId: string;
+        criterion: "score" | "alphanumeric" | "occurrences" | "automatic";
+    }, "facet/updateSortCriterion", never, never>;
+    const updateFreezeCurrentValues: import("@reduxjs/toolkit").ActionCreatorWithPreparedPayload<[payload: {
+        facetId: string;
+        freezeCurrentValues: boolean;
+    }], {
+        facetId: string;
+        freezeCurrentValues: boolean;
+    }, "facet/updateFreezeCurrentValues", never, never>;
+    const deselectAllFacetValues: import("@reduxjs/toolkit").ActionCreatorWithPreparedPayload<[payload: string], string, "facet/deselectAll", never, never>;
+}
 export declare namespace ConfigurationActions {
     const updateBasicConfiguration: import("@reduxjs/toolkit").ActionCreatorWithPreparedPayload<[payload: {
         accessToken?: string | undefined;
@@ -280,6 +319,9 @@ export declare namespace ProductRecommendationsActions {
         skus: string[];
     }, "productrecommendations/setSku", never, never>;
     type StateNeededByGetProductRecommendations = StateNeededByGetProductRecommendationsAlias;
+}
+export declare namespace BreadcrumbActions {
+    const deselectAllFacets: import("@reduxjs/toolkit").ActionCreatorWithoutPayload<"facet/deselectAllFacets">;
 }
 export declare namespace ResultTemplatesHelpers {
     const getResultProperty: (result: import("..").Result, property: string) => unknown;

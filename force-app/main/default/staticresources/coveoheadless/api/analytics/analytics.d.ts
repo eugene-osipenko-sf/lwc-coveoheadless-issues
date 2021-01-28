@@ -1,7 +1,7 @@
 import { CoveoSearchPageClient, SearchPageClientProvider, history, AnalyticsClientSendEventHook } from 'coveo.analytics';
 import { Logger } from 'pino';
-import { ConfigurationSection, ContextSection, PipelineSection, QuerySection, SearchHubSection, SearchSection } from '../../state/state-sections';
-export declare type StateNeededByAnalyticsProvider = ConfigurationSection & Partial<SearchHubSection & SearchSection & PipelineSection & QuerySection & ContextSection>;
+import { ConfigurationSection, ContextSection, PipelineSection, QuerySection, RecommendationSection, SearchHubSection, SearchSection } from '../../state/state-sections';
+export declare type StateNeededByAnalyticsProvider = ConfigurationSection & Partial<SearchHubSection & SearchSection & PipelineSection & QuerySection & ContextSection & RecommendationSection>;
 export declare class AnalyticsProvider implements SearchPageClientProvider {
     private state;
     constructor(state: StateNeededByAnalyticsProvider);

@@ -25,7 +25,7 @@ export default class Headlessbase extends LightningElement {
 
             this.engine = new this.CoveoHeadless.HeadlessEngine({
                 configuration: this.CoveoHeadless.HeadlessEngine.getSampleConfiguration(),
-                reducers: this.CoveoHeadless.searchAppReducers
+                reducers: this.CoveoHeadless.recommendationAppReducers
             });
         } catch (error) {
             window.console.log('er', error);

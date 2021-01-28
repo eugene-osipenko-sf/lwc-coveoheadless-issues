@@ -1,15 +1,12 @@
 export declare type HttpMethods = 'POST' | 'GET' | 'DELETE' | 'PUT';
 export declare type HTTPContentTypes = 'application/json' | 'text/html';
-import { BaseParam } from './search/search-api-params';
 import { Logger } from 'pino';
-export interface BasePlatformClientOptions {
+export interface PlatformClientCallOptions {
     url: string;
     method: HttpMethods;
     contentType: HTTPContentTypes;
     headers?: Record<string, string>;
-}
-export interface PlatformClientCallOptions<RequestParams extends BaseParam> extends BasePlatformClientOptions {
-    requestParams: Omit<RequestParams, 'url' | 'organizationId' | 'accessToken'>;
+    requestParams: unknown;
     accessToken: string;
     renewAccessToken: () => Promise<string>;
     preprocessRequest: PreprocessRequestMiddleware;
@@ -20,10 +17,10 @@ export interface PlatformResponse<T> {
     body: T;
     response: Response;
 }
-export declare type PreprocessRequestMiddleware = (request: BasePlatformClientOptions) => BasePlatformClientOptions | Promise<BasePlatformClientOptions>;
+export declare type PreprocessRequestMiddleware = (request: PlatformClientCallOptions) => PlatformClientCallOptions | Promise<PlatformClientCallOptions>;
 export declare const NoopPreprocessRequestMiddleware: PreprocessRequestMiddleware;
 export declare class PlatformClient {
-    static call<RequestParams extends BaseParam, ResponseType>(options: PlatformClientCallOptions<RequestParams>): Promise<PlatformResponse<ResponseType>>;
+    static call<ResponseType>(options: PlatformClientCallOptions): Promise<PlatformResponse<ResponseType>>;
 }
 declare type PlatformCombination = {
     env: 'dev';

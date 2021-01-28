@@ -23,4 +23,8 @@ export interface RecommendationState {
      * `true` if the recommendation request is currently being executed against the Coveo platform, `false` otherwise.
      */
     isLoading: boolean;
+    /**
+     * A unique identifier for this recommendation request, used mainly for the Coveo Analytics service.
+     */
+    searchUid: string;
 }
